@@ -1,8 +1,14 @@
+pub mod helper;
 fn main() {
     println!("Hello, world!");
-    test_func();
+    let full_name = helper::get_full_name("HongFei", "Du");
+    println!("hello, from {0}",full_name);
+    let age = helper::test_func::get_age(32);
+    println!("My age is {0}",age);
+    // test_func();
 }
 
+#[allow(dead_code)]
 fn test_func(){
    let x:f64= 255.0;
    let y:u8= x as u8 -5;
