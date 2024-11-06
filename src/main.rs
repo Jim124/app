@@ -1,6 +1,9 @@
 pub mod helper;
 pub mod functions;
 pub mod ownership;
+pub mod if_control;
+pub mod loop_control;
+pub mod match_control;
 fn main() {
     println!("Hello, world!");
     let full_name = helper::get_full_name("HongFei", "Du");
@@ -41,8 +44,8 @@ fn main() {
     println!("Value from function 'add' is : {}",functions::add(1,3));
     let weight = 230.0;
     let height = 120.0;
-    let BMI = functions::calculate_height(weight, height);
-    println!("BMI is {:.2}",BMI);
+    let bmi = functions::calculate_height(weight, height);
+    println!("BMI is {:.2}",bmi);
     let s1 = String::from("Rust");
     let size = ownership::calculate_add(&s1);
     println!("The len of {} is {}",s1,size);
@@ -50,6 +53,10 @@ fn main() {
     let s3 = s2;
     // println!("s2 is {}",s2); error
     println!("s3 is {}",s3);
+    if_control::if_control_flow(300);
+    loop_control::loop_control();
+    loop_control::while_control();
+    match_control::match_control();
 
 }
 
